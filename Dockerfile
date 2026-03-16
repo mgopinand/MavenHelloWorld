@@ -1,3 +1,9 @@
-FROM tomcat:latest
-COPY ./webapp.war /usr/local/tomcat/webapps
-RUN cp -r /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
+FROM ubuntu
+
+WORKDIR /app
+
+COPY ..
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","app.jar"]
