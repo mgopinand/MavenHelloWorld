@@ -1,8 +1,8 @@
-FROM eclipse-temurin:17-jre
+FROM tomcat:9.0
 
 WORKDIR /app
 
-COPY webapp/target/*.jar app.jar
+COPY webapp/target/*.war /usr/local/tomcat/webapps/app.war
 
 EXPOSE 8080
 
